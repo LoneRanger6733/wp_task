@@ -755,3 +755,46 @@ function twentytwenty_get_elements_array() {
 	*/
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
 }
+
+// Function to add button shortcode to posts and pages
+function btn_shortcode($atts, $content = null){
+	
+	// shortcode attributes
+    extract( shortcode_atts( array(
+        'type'    => '',
+        'text'   => ''
+	), $atts ) );
+  
+	
+
+	if ( $type ) {
+     
+        $link_attr = array(
+            'type'   => $type,
+			'value'  => 'Subscribe To '. get_the_title(),
+			'class'  => 'submitbtn'
+		);
+
+
+		$link_attrs_str = '';
+ 
+        foreach ( $link_attr as $key => $val ) {
+ 
+            if ( $val ) {
+ 
+                $link_attrs_str .= ' ' . $key . '="' . $val . '"';
+ 
+            }
+ 
+        }
+   $title=get_the_title();
+ 
+        return '<input' . $link_attrs_str . '><input type=hidden name="title" value="'.$title.'">';
+	
+}
+}
+
+
+add_shortcode('btn_sub', 'btn_shortcode');
+
+
