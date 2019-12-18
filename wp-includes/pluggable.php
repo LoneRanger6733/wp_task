@@ -410,12 +410,20 @@ if ( ! function_exists( 'wp_mail' ) ) :
 		}
 
 		// Set to use PHP's mail()
-		$phpmailer->isMail();
+		//$phpmailer->isMail();
+
+$phpmailer->isSMTP();
+$phpmailer->Host = 'smtp.gmail.com';
+$phpmailer->SMTPAuth = true;
+$phpmailer->Username = 'ralsemailmanager@gmail.com';
+$phpmailer->Password = 'xs2ralsemail123!@#';
+$phpmailer->SMTPSecure = 'tls';
+$phpmailer->Port = 587;
 
 		// Set Content-Type and charset
 		// If we don't have a content-type from the input headers
 		if ( ! isset( $content_type ) ) {
-			$content_type = 'text/plain';
+			$content_type = 'text/html';
 		}
 
 		/**

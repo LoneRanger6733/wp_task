@@ -444,5 +444,7 @@ if ( $wp_list_table->has_items() ) {
 <br class="clear" />
 </div>
 
+
+
 <?php
 include( ABSPATH . 'wp-admin/admin-footer.php' );

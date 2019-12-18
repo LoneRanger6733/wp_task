@@ -770,7 +770,8 @@ function btn_shortcode($atts, $content = null){
 	if ( $type ) {
      
         $link_attr = array(
-            'type'   => $type,
+			'type'   => $type,
+			'name' => 'sub_form',
 			'value'  => 'Subscribe To '. get_the_title(),
 			'class'  => 'submitbtn'
 		);
@@ -789,7 +790,7 @@ function btn_shortcode($atts, $content = null){
         }
    $title=get_the_title();
  
-        return '<input' . $link_attrs_str . '><input type=hidden name="title" value="'.$title.'">';
+        return '<input' . $link_attrs_str . '><input type=hidden name="tag_title" value="'.$title.'">';
 	
 }
 }
@@ -798,3 +799,4 @@ function btn_shortcode($atts, $content = null){
 add_shortcode('btn_sub', 'btn_shortcode');
 
 
+ 
