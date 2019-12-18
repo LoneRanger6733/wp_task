@@ -416,7 +416,7 @@ $phpmailer->isSMTP();
 $phpmailer->Host = 'smtp.gmail.com';
 $phpmailer->SMTPAuth = true;
 $phpmailer->Username = 'ralsemailmanager@gmail.com';
-$phpmailer->Password = 'xs2ralsemail123!@#';
+$phpmailer->Password = '#!@#';
 $phpmailer->SMTPSecure = 'tls';
 $phpmailer->Port = 587;
 
